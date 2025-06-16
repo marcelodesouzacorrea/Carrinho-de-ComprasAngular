@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <h2 class="mb-3">🛒 Carrinho</h2>
+  <ul class="list-group mb-3">
+    <li *ngFor="let item of itens; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+      {{ item.produto.nome }} ({{ item.quantidade }}x) - R$ {{ item.produto.preco * item.quantidade }}
+      <button class="btn btn-sm btn-danger" (click)="remover(i)">Remover</button>
+    </li>
+  </ul>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <strong>Total: R$ {{ total }}</strong>
+    <button class="btn btn-outline-secondary btn-sm" (click)="limpar()">Limpar carrinho</button>
+  </div>
+</div>
